@@ -1,0 +1,353 @@
+@import "bourbon/bourbon"
+
+.container
+	width: 100%
+	max-width: 1132px
+	margin: 0 auto
+
+	&.small-container
+		max-width: 1132px
+
+		.row
+			max-width: 922px
+
+	.row
+		margin-left: 0
+		margin-right: 0
+
+@media all and (max-width: 1132px)
+	.container
+		padding: 0 12px
+
+		&.no-padding
+			padding: 0
+
+@media all and (max-width: 1030px)
+	// .related-videos, .videos-main
+	// 	.act-videos
+	// 		+justify-content(space-around)
+
+@media all and (max-width: 992px)
+	#sidenav-overlay
+		opacity: 0!important
+
+	.side-nav
+		top: 60px
+		box-shadow: none
+		width: 100%
+
+		li
+			&.active
+				background-color: transparent
+
+	// .nav-bar-main.fixed + .side-nav	
+	// 	top: 49px
+
+	.nav-bar-main
+		background-color: #fff	
+		border-bottom: 1px solid #f2f2f2
+		padding: 0 20px
+		height: 60px
+
+	.my-header
+		+calc(height, "100vh - 60px")
+
+		.item
+			+calc(height, "100vh - 60px")
+			background:
+				size: cover
+				position: top left
+				repeat: no-repeat
+
+			&.first-item
+				background:
+					image: url('../images/slider1.jpeg')
+
+			&.second-item
+				background:
+					image: url('../images/slider2.jpeg')
+				
+			&.third-item
+				background:
+					image: url('../images/slider3.jpg')
+				
+			&.fourth-item
+				background:
+					image: url('../images/slider2.jpeg')
+
+			.item-caption
+				top: 22%
+				padding: 0 20px	
+
+	.nevents
+		.row
+			.col
+				margin-bottom: 50px
+
+	.miles
+		.a-mile
+			margin-bottom: 80px
+
+		.col
+			&:last-child
+				text-align: center
+
+				img
+					max-width: 100%
+					margin: 45px 0
+
+			&:first-child
+				img
+					max-width: 100%			
+
+
+	footer
+		padding: 20px
+
+		.f-copy
+			position: relative
+			bottom: 0
+
+		.afcol
+			width: 100%
+			margin-bottom: 20px
+
+			p
+				padding: 0
+
+	a.mobile-logo
+		display: inline-block
+		+calc(width, "100% - 28px")
+		text-align: center
+
+		img
+			max-width: 295px
+			margin-top: 2px	
+			vertical-align: middle		
+
+	.button-collapse
+		display: inline-block
+		vertical-align: middle
+		margin-top: 15px	
+
+		span.nav-ham
+			width: 24px
+			display: block
+			height: 3px
+			background: #4b4f54
+			margin: 5px auto
+			+transition(all 0.3s ease)
+
+			&.open
+				&:first-child
+					+transform(rotate(45deg))
+					margin-top: 5px
+					transform-origin: 10% 10%
+
+				&:nth-child(2)
+					opacity: 0
+					// +transform(rotate(-45deg))
+					// margin-top: -7px
+
+				&:last-child
+					+transform(rotate(-45deg))
+					transform-origin: 10% 90%
+					margin-top: -3px
+
+	.main-sn
+		// background: #ECE9E6
+		// background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6)
+		// background: linear-gradient(to right, #FFFFFF, #ECE9E6)
+		background-color: #FFFFFF
+
+		li:hover
+			background-color: transparent
+
+			a:hover
+				background-color: transparent
+
+		li>a
+			padding: 0 0
+			margin: 0 20px
+			border-bottom: 1px solid #f2f2f2
+			color: #6e6e6e
+			font-size: 15px
+			font-weight: 600
+
+			i
+				float: right
+
+		a.collapsible-header
+			max-width: 100%		
+			padding: 0 0
+			margin: 0 20px
+			border-bottom: 1px solid #f2f2f2
+
+			&.active
+				font-weight: 700
+
+			i
+				margin-right: 0
+				font-size: 17px
+
+				&.fa.fa-caret-up
+					display: none
+
+				&.fa.fa-caret-down
+					display: inline-block	
+
+			&.active
+				i
+					&.fa.fa-caret-down
+						display: none		
+
+					&.fa.fa-caret-up
+						display: inline-block	
+
+		.collapsible-body
+			background-color: transparent	
+
+			ul li>a
+				border-bottom: none
+				margin: 0 0
+
+		form
+			padding: 15px 20px
+			background-color: #fff
+			margin-top: 40px
+			border-top: 1px solid #f2f2f2
+			border-bottom: 1px solid #f2f2f2
+
+			input, button
+				display: inline-block
+				width: auto
+				height: 36px	
+				border: 1px solid #dbdbdb
+				vertical-align: top
+
+				&:focus, &:active
+					outline: none
+					background-color: auto
+
+			input
+				width: 88%
+				padding: 0 10px
+				background-color: transparent
+				border-radius: 2px 0 0 2px
+				color: #6e6e6e
+
+				+placeholder
+					color: #999
+
+				&:focus
+					background-color: #fff	
+
+			button
+				width: 12%	
+				margin-left: -4px	
+				border-radius: 0 2px 2px 0		
+
+				img
+					vertical-align: middle
+					width: 21px
+					margin-top: -3px
+
+				&:focus
+					background-color: buttonface	
+
+@media all and (max-width: 958px)
+	.blog-inner
+		.main-post
+			+flex-direction(column)
+
+	.news-main
+		.news-block
+			.news-collection
+				.a-news
+					>a
+						img
+							max-width: 100%
+
+					.right-side
+						padding-top: 10px
+						padding-left: 0
+
+						a.rmore-btn
+							position: relative
+
+@media all and (max-width: 720px)
+	.my-header
+		.item
+			.item-caption
+				top: 15%
+
+	.partners-form
+		margin: 0 0
+		border-radius: 0
+
+		>a
+			top: 15px
+			right: 15px
+
+		.pf-content
+			form
+				.input-element
+					width: 100%			
+
+@media all and (max-width: 600px)
+	footer
+		padding: 12px 5px
+
+	.blog-inner
+		.main-post
+			.right-part
+				.next-up
+					+flex-wrap(wrap)
+
+	.partners-form .pf-content form, .contact-div form, .comment-sec form, .apply-career form
+		.input-element
+			width: 100%
+
+	.who-main
+		background-color: #fff
+
+		.whosidebar
+			display: none
+
+		.act-content
+			.partners-col
+				+justify-content(space-around)
+
+			h4
+				text-align: center		
+			
+	.header-text
+		.row
+			>.col
+				&:not(:last-child)
+					margin-bottom: 30px
+
+@media all and (max-width: 420px)
+	.my-header
+		.owl-controls
+			display: none
+
+		.item
+			.item-caption
+				top: auto
+				bottom: 20%
+
+				h3
+					font-size: 32px
+
+				p
+					font-size: 16px
+
+	.partners-form
+		.pf-content
+			padding: 80px 35px 60px 35px					
+
+@media all and (max-width: 400px)
+	a.mobile-logo
+		img
+			max-width: 250px			
