@@ -734,15 +734,12 @@ $('.editwhatwedo').on('click',function(){
     //shift le 1st ko element remove gardincha
     point_desc_array.shift();
     point_desc_array.forEach(function(element,index){
-	    debugger;
+	    //debugger;
     	$('#editwhatwedo .btn-add').click();
     	$($('textarea[name="textarea[]"]').get().pop()).val(element);
 
     });
-    // $('#edit_point').val($(this).data('point'));
-   
-   // var point=$(this).data('point');
-   // alert(point.length);
+  
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    
    for ( instance in CKEDITOR.instances ) {

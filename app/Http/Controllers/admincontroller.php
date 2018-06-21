@@ -779,6 +779,34 @@ public function postEditwhatwedo($id,Request $request){
     $image= $location.$filename;
     $obj->image= $image;
     }
+
+    $images=$request->file('point_image');
+    
+    $image_arrays = [];
+    if(!empty($images)){
+    foreach ($images as  $files) {
+        $filenames = md5(time()).".".$files->getClientOriginalName();
+        $locations = "public/businessimage/";
+        $files->move($locations,$filenames);
+        $images = $locations.$filenames;
+        $image_arrays[] = $images;
+    }
+    $obj->point_image = json_encode($image_arrays);
+}
+
+$point_description=$request->get('textarea');
+
+    $point_descriptions= [];
+   
+    foreach ($point_description as  $fileeeee) {
+        
+        $point_descriptions[] = $fileeeee;
+    }
+    $obj->point_description = json_encode($point_descriptions);
+
+
+
+
     $result=$obj->save();
     if($result){
         return response()->json(['message'=>'Content succesfully edited']);
@@ -1182,9 +1210,10 @@ public function postEditcasestudy($id,Request $request){
     $obj->case_description=Input::get('edit_description');
 
     $files=Input::file('case_image');
-     if(!empty($files)){
+     
 
     $image_array = [];
+    if(!empty($files)){
 
     foreach ($files as  $file) {
         $filename = md5(time()).".".$file->getClientOriginalName();

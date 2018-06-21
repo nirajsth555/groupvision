@@ -144,7 +144,7 @@
     <!--<div class="form-group">-->
         <div class="form-group">
                   <label for="exampleInputFile">Image of the point*</label>
-                  <input type="file" id="exampleInputFile" name="point_image[]" required="" >
+                  <input type="file" id="exampleInputFile" name="point_image[]"  >
 
                   <p class="help-block">Please upload image of dimension 232*265 </p>
 
@@ -220,7 +220,7 @@
             </div>
             <div class="form-group">
                   <label for="exampleInputFile">Upload a Image*</label>
-                  <input type="file" id="exampleInputFile" name="image" required="">
+                  <input type="file" id="exampleInputFile" name="image" >
 
                   <p class="help-block">Please upload image of dimension 808*400</p>
                 </div>    
@@ -255,7 +255,7 @@
     <!--<div class="form-group">-->
         <div class="form-group">
                   <label for="exampleInputFile">Image of the point*</label>
-                  <input type="file" id="exampleInputFile" name="point_image[]" required="" >
+                  <input type="file" id="exampleInputFile" name="point_image[]"  >
 
                   <p class="help-block">Please upload image of dimension 232*265 </p>
 
