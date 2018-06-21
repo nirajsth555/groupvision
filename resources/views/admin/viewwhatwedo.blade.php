@@ -52,7 +52,7 @@
                     
                     <td><img src="{{url($n->image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point="{{$n->point_description}}" >
+                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point='{{$n->point_description}}' >
                      <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="Are u sure u want to delete?" class="deleteWhatwedo" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
@@ -250,7 +250,7 @@
           </div>
 
           <div class="row wh">
-            @foreach($edit_point as $c)
+            {{--@foreach($edit_point as $c) --}}
 
     <!--<div class="form-group">-->
         <div class="form-group">
@@ -270,7 +270,7 @@
            
     <!--</div>-->
   <span><button class="btn btn-add btn-success" type="button"><span class="fa fa-plus">Add</span></button></span>
-  @endforeach
+  {{--@endforeach--}}
 </div>
 
 

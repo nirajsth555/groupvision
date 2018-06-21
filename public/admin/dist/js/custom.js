@@ -725,7 +725,21 @@ $('.editwhatwedo').on('click',function(){
 	
     $('#edit_id').val($(this).data('id'));
     $('#edit_title').val($(this).data('title'));
-    $('#edit_point').val($(this).data('point'));
+
+    var point_desc_array = $(this).data('point');
+    //first ko pailai tei huncha tei bhaera 1st ko sidai haldeko
+    var edit_point = $('textarea[name="textarea[]"]').get();
+    edit_point.shift();
+    $(edit_point[0]).val(point_desc_array[0]);
+    //shift le 1st ko element remove gardincha
+    point_desc_array.shift();
+    point_desc_array.forEach(function(element,index){
+	    debugger;
+    	$('#editwhatwedo .btn-add').click();
+    	$($('textarea[name="textarea[]"]').get().pop()).val(element);
+
+    });
+    // $('#edit_point').val($(this).data('point'));
    
    // var point=$(this).data('point');
    // alert(point.length);
