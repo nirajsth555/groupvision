@@ -39,7 +39,7 @@
                     <th>Image</th>
                   	<th>Edit</th>
                   	<th>Delete</th>
-                  	<th>View</th>
+                  	
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +56,7 @@
 
                   	<td><a href="{{url('edit-team-member')}}/{{$n->id}}" > <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="delete_memb" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
-                  	<td><a href=""> <span class="label label-success">View</span></a></td>
+                  	
                 </tr>
                   	@endforeach
                

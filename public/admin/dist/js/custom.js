@@ -739,6 +739,8 @@ $('.editwhatwedo').on('click',function(){
     	$($('textarea[name="textarea[]"]').get().pop()).val(element);
 
     });
+    var edit_desc_array= $(this).data('')
+    var edit_img= $('input[name="point_image[]"]').get();
   
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    

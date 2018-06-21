@@ -269,6 +269,7 @@
 
            
     <!--</div>-->
+  
   <span><button class="btn btn-add btn-success" type="button"><span class="fa fa-plus">Add</span></button></span>
   {{--@endforeach--}}
 </div>

@@ -39,7 +39,6 @@
                     <th>Image</th>
                   	<th>Edit</th>
                   	
-                  	<th>View</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +55,7 @@
                   	
                      <td><a href="#"  class="editstory" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->description}}"   > <span class="label label-danger">Edit</span></a></td>
                   	
-                  	<td><a href=""> <span class="label label-success">View</span></a></td>
+                  
                 </tr>
                   	@endforeach
                

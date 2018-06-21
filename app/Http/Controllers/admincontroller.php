@@ -773,17 +773,18 @@ public function postEditwhatwedo($id,Request $request){
     $file=Input::file('image');
     if(!empty($file)){
     $filename= md5(time()).".".$file->getClientOriginalName();
-   
     $location="public/businessimage/";
     $file->move($location,$filename);
     $image= $location.$filename;
     $obj->image= $image;
     }
+   
 
-    $images=$request->file('point_image');
     
+    $images=Input::file('point_image');
     $image_arrays = [];
     if(!empty($images)){
+    
     foreach ($images as  $files) {
         $filenames = md5(time()).".".$files->getClientOriginalName();
         $locations = "public/businessimage/";
@@ -794,15 +795,15 @@ public function postEditwhatwedo($id,Request $request){
     $obj->point_image = json_encode($image_arrays);
 }
 
-$point_description=$request->get('textarea');
 
+    $point_description=Input::get('textarea');
     $point_descriptions= [];
-   
     foreach ($point_description as  $fileeeee) {
-        
         $point_descriptions[] = $fileeeee;
     }
     $obj->point_description = json_encode($point_descriptions);
+        
+   
 
 
 

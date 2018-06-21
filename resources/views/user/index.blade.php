@@ -111,7 +111,7 @@
               </a>
               <a href="{{url('/')}}" class="hide-on-large-only mobile-logo"><img src="{{url('public/user/images/logo-vision-9.svg')}}" alt="Logo" class="responsive-img"></a>
               <ul class="hide-on-med-and-down">
-                <li class="fixed-logo"><a href="index.html"><img src="{{url('public/user/images/logo-vision-9.svg')}}" alt="Logo" class="responsive-img"></a></li>
+                <li class="fixed-logo"><a href="{{url('/')}}"><img src="{{url('public/user/images/logo-vision-9.svg')}}" alt="Logo" class="responsive-img"></a></li>
                 <li><a href="{{url('/')}}" class="">Home</a></li>
                 <li class="n-d"></li>
                 <li><a href="#!" class="dropdown-button5" data-activates="dropdown5">About Us <i class="fa fa-caret-down"></i></a></li>

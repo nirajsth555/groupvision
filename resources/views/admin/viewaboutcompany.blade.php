@@ -33,7 +33,7 @@
                     <th>Image</th>
                   	<th>Edit</th>
                   	
-                  	<th>View</th>
+                  	
                 </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@
 
                   	<td><a href="{{url('edit-about-our-company')}}/{{$n->id}}"> <span class="label label-primary">Edit</span></a></td>
                   	
-                  	<td><a href=""> <span class="label label-success">View</span></a></td>
+                  	
                 </tr>
                   	@endforeach
                
