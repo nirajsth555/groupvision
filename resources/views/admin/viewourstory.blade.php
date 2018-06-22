@@ -53,7 +53,7 @@
                     <td><img src="{{url($n->image)}}" width="200px" height="200px"> </td>
 
                   	
-                     <td><a href="#"  class="editstory" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->description}}"   > <span class="label label-danger">Edit</span></a></td>
+                     <td><a href="#"  class="editstory" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->description}}" data-image="{{$n->image}}"   > <span class="label label-danger">Edit</span></a></td>
                   	
                   
                 </tr>
@@ -216,9 +216,10 @@
 
                <div class="form-group">
                   <label for="exampleInputFile">Upload a Image*</label>
-                  <input type="file" id="exampleInputFile" name="image" required="">
+                  <input type="file" id="exampleInputFile" name="image" >
 
-                  <p class="help-block">Example block-level help text here.</p>{{$errors->first('image')}}
+                  <p class="help-block">Example block-level help text here.</p>{{$errors->first('image')}}<br>
+                  <img src="" id="Image" width="300" height="200">
                 </div>
 
 

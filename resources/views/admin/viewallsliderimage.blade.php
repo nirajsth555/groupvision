@@ -51,7 +51,7 @@
                     <td>{{$n->slider_title}}</td>
                   	
 
-                  	<td><a href="#" class="editslider" data-id="{{$n->id}}" data-title="{{$n->slider_title}}" data-info="{{$n->slider_short_info}}" > <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editslider" data-id="{{$n->id}}" data-title="{{$n->slider_title}}" data-info="{{$n->slider_short_info}}" data-image="{{$n->slider_image}}" > <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deletesliderimage" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                     
 
@@ -170,7 +170,8 @@
             
             <div class="form-group">
                  <label for="exampleInputEmail1">Slider Image*</label>
-                 <input type="file" class="form-control"  name="slider_image" required="" >
+                 <input type="file" class="form-control"  name="slider_image"  >
+                 <img src="" id="myImage" width="300" height="200">
                  
             </div>
             <div class="form-group">

@@ -58,7 +58,7 @@
                    
                    
 
-                  	<td><a href="#" class="editbook" data-id="{{$n->id}}" data-title="{{$n->book_title}}" data-description="{{$n->book_description}}" data-venue="{{$n->book_price}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editbook" data-id="{{$n->id}}" data-title="{{$n->book_title}}" data-description="{{$n->book_description}}" data-venue="{{$n->book_price}}" data-image="{{$n->book_image}}"> <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deletebook" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -202,7 +202,8 @@
             <div class="form-group">
                  <label for="exampleInputEmail1"> Image*</label>
                  <input type="file" class="form-control"  name="book_image" >
-                 Please upload image of dimension 329*290
+                 Please upload image of dimension 329*290<br>
+                 <img src="" id="myImage" width="300" height="200">
                  
             </div>
             

@@ -52,7 +52,7 @@
                     
                     <td><img src="{{url($n->image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point='{{$n->point_description}}' >
+                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point='{{$n->point_description}}' data-img="{{$n->point_image}}" >
                      <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="Are u sure u want to delete?" class="deleteWhatwedo" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
@@ -255,7 +255,7 @@
     <!--<div class="form-group">-->
         <div class="form-group">
                   <label for="exampleInputFile">Image of the point*</label>
-                  <input type="file" id="exampleInputFile" name="point_image[]"  >
+                  <input type="file" id="exampleInputFile" name="point_image[]" id="edit_desc_array"  >
 
                   <p class="help-block">Please upload image of dimension 232*265 </p>
 

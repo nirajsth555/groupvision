@@ -61,7 +61,7 @@
                     
                          
                   	<!-- <td><a href="" id= > <span class="label label-primary">Edit</span></a></div></td> -->
-                    <td><a href="#"  class="editservice" data-id="{{$n->id}}" data-title="{{$n->service_title}}" data-description="{{$n->service_description}}"  > <span class="label label-danger">Edit</span></a></td>
+                    <td><a href="#"  class="editservice" data-id="{{$n->id}}" data-title="{{$n->service_title}}" data-description="{{$n->service_description}}" data-image="{{$n->service_image}}"  > <span class="label label-danger">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deleteourservice" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -236,9 +236,10 @@
 
                <div class="form-group">
                   <label for="exampleInputFile"> Images*</label>
-                  <input type="file" id="exampleInputFile" name="service_image" multiple="multiple" required="">
+                  <input type="file" id="exampleInputFile" name="service_image" >
 
-                  <p class="help-block">Please upload image of dimension 1800*572</p>
+                  <p class="help-block">Please upload image of dimension 1800*572</p><br>
+                  <img src="" id="Image1" width="300" height="200">
                 </div>
 
 

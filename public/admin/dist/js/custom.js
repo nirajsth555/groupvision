@@ -68,6 +68,14 @@ $('.editbusiness').on('click',function(){
    $('#edit_title').val($(this).data('title'));
    $('#edit_slogan').val($(this).data('slogan'));
    $('#edit_website').val($(this).data('website'));
+   var my = $(this).data('front');
+    $("#exampleModal #Image1").attr("src", my);
+
+    var Image = $(this).data('img');
+    $("#exampleModal #Image2").attr("src", Image);
+
+    var myI = $(this).data('single');
+    $("#exampleModal #Image3").attr("src", myI);
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
   
@@ -510,7 +518,13 @@ $('.editblog').on('click',function(){
 	
     $('#edit_id').val($(this).data('id'));
     $('#edit_title').val($(this).data('title'));
-   
+    var myImageId = $(this).data('thumbnail');
+    $("#exampleModal #myImage").attr("src", myImageId);
+
+    var myImage = $(this).data('full');
+    $("#exampleModal #Image").attr("src", myImage);
+    // $('#edit_thumbnail').val($(this).data('thumbnail'));
+  // $('.imagepreview').attr('src', $(this).find('thumbnail').attr('src'));
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    
@@ -725,6 +739,7 @@ $('.editwhatwedo').on('click',function(){
 	
     $('#edit_id').val($(this).data('id'));
     $('#edit_title').val($(this).data('title'));
+    var edit_desc_array= $(this).data('img');
 
     var point_desc_array = $(this).data('point');
     //first ko pailai tei huncha tei bhaera 1st ko sidai haldeko
@@ -739,8 +754,9 @@ $('.editwhatwedo').on('click',function(){
     	$($('textarea[name="textarea[]"]').get().pop()).val(element);
 
     });
-    var edit_desc_array= $(this).data('')
-    var edit_img= $('input[name="point_image[]"]').get();
+    
+
+    
   
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    
@@ -872,6 +888,12 @@ $('.editevent').on('click',function(){
    $('#edit_address').val($(this).data('address'));
    $('#edit_from').val($(this).data('from'));
    $('#edit_to').val($(this).data('to'));
+
+   var mydef = $(this).data('front');
+    $("#exampleModal #Image1").attr("src", mydef);
+
+    var my = $(this).data('single');
+    $("#exampleModal #Image2").attr("src", my);
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    
@@ -996,6 +1018,8 @@ $('.editwherewework').on('click',function(){
 	
     $('#edit_id').val($(this).data('id'));
    $('#edit_title').val($(this).data('title'));
+   var my = $(this).data('image');
+    $("#exampleModal #Image1").attr("src", my);
    
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
@@ -1120,6 +1144,8 @@ $('.editresearch').on('click',function(){
 	
     $('#edit_id').val($(this).data('id'));
    $('#edit_title').val($(this).data('title'));
+   var my = $(this).data('image');
+    $("#exampleModal #Image1").attr("src", my);
    
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
@@ -1246,7 +1272,10 @@ $('.edit').on('click',function(){
 	
    $('#edit_name').val($(this).data('title'));  //agadi ko form ma dekhaune id paxadi do edit button bata ako id
    $('#edit_id').val($(this).data('id'));
-   $('#case_image').val($(this).data('image'));
+   
+
+
+
    CKEDITOR.instances['edit_description'].setData($(this).data('description'));
 
 
@@ -1364,6 +1393,8 @@ $('.editservice').on('click',function(){
 	//alert();
    $('#edit_name').val($(this).data('title'));
    $('#edit_id').val($(this).data('id'));
+   var my = $(this).data('image');
+    $("#exampleModalLong #Image1").attr("src", my);
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    
    for ( instance in CKEDITOR.instances ) {
@@ -1495,6 +1526,13 @@ $('.editnews').on('click',function(){
    $('#edit_name').val($(this).data('title'));
    $('#edit_id').val($(this).data('id'));
    $('#edit_source').val($(this).data('source'));
+
+    var my = $(this).data('thumbnail');
+    $("#exampleModalLong #Image1").attr("src", my);
+
+     var myimage = $(this).data('single');
+    $("#exampleModalLong #Image2").attr("src", myimage);
+
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
  
    for ( instance in CKEDITOR.instances ) {
@@ -1647,6 +1685,8 @@ $('.editstory').on('click',function(){
 	
    $('#edit_name').val($(this).data('title'));
    $('#edit_id').val($(this).data('id'));
+   var myImage = $(this).data('image');
+    $("#exampleModalLong #Image").attr("src", myImage);
 
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
@@ -1741,6 +1781,8 @@ $(document).ready(function(){
 	
    $('#edit_name').val($(this).data('title'));
    $('#edit_id').val($(this).data('id'));
+   var myImage = $(this).data('image');
+    $("#exampleModalLong #Image").attr("src", myImage);
 
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
@@ -1862,6 +1904,8 @@ $(document).ready(function(){
 	
    $('#edit_title').val($(this).data('title'));
    $('#edit_id').val($(this).data('id'));
+   var myImageId = $(this).data('image');
+    $("#exampleModal #myImage").attr("src", myImageId);
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('info'));
    
@@ -2188,6 +2232,9 @@ $(".deletebook").on('click',function(e){
    $('#edit_price').val($(this).data('venue'));
   
    $('#edit_id').val($(this).data('id'));
+
+   var myImageId = $(this).data('image');
+    $("#exampleModal #myImage").attr("src", myImageId);
    
    CKEDITOR.instances['edit_desc'].setData($(this).data('description'));
    

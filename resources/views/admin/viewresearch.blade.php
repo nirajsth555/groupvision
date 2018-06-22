@@ -52,7 +52,7 @@
                    
                     <td><img src="{{url($n->research_image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editresearch" data-id="{{$n->id}}" data-title="{{$n->research_title}}" data-description="{{$n->research_description}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editresearch" data-id="{{$n->id}}" data-title="{{$n->research_title}}" data-description="{{$n->research_description}}" data-image="{{$n->research_image}}"> <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deleteresearch" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -199,8 +199,9 @@
           </div>
           <div class="form-group">
                  <label for="exampleInputEmail1">Research Preview Image*</label>
-                 <input type="file" class="form-control"  name="research_image" required="" >
-                 Please upload image of dimension 330*150
+                 <input type="file" class="form-control"  name="research_image"  >
+                 Please upload image of dimension 330*150<br>
+                 <img src="" id="Image1" width="300" height="200">
                  
             </div>
        

@@ -62,7 +62,8 @@
                     <td><img src="{{url($images[0])}}" width="200px" height="200px"><br> </td>
                          
                   	<!-- <td><a href="" id= > <span class="label label-primary">Edit</span></a></div></td> -->
-                    <td><a href="#"  class="edit" data-id="{{$n->id}}" data-title="{{$n->case_title}}" data-description="{{$n->case_description}}"  > <span class="label label-danger">Edit</span></a></td>
+
+                    <td><a href="#"  class="edit" data-id="{{$n->id}}" data-title="{{$n->case_title}}" data-description="{{$n->case_description}}"   > <span class="label label-danger">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deleteCasestudy" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -212,7 +213,8 @@
                   <label for="exampleInputFile"> Images*</label>
                   <input type="file" id="exampleInputFile" name="case_image[]" multiple="multiple" required="">
 
-                  <p class="help-block">Please upload image of size 535*374.</p>{{$errors->first('image')}}
+                  <p class="help-block">Please upload image of size 535*374.</p>{{$errors->first('image')}}<br>
+                  <img src="" id="Image1" width="300" height="200">
                 </div>
 
 

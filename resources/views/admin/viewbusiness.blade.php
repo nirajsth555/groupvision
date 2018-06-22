@@ -56,7 +56,7 @@
                     <td>{!! \Illuminate\Support\Str::words($n->business_perspective, 10,'....')  !!}</td> -->
                     <td><img src="{{url($n->front_image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editbusiness" data-id="{{$n->id}}" data-title="{{$n->title}}" data-slogan="{{$n->slogan}}" data-description="{{$n->business_intro}}" data-website="{{$n->business_website}}" data-front="{{url($n->front_image)}}" data-single="{{url($n->single_page_image)}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editbusiness" data-id="{{$n->id}}" data-title="{{$n->title}}" data-slogan="{{$n->slogan}}" data-description="{{$n->business_intro}}" data-website="{{$n->business_website}}" data-front="{{$n->front_image}}" data-single="{{$n->single_page_image}}" data-img="{{$n->title_image}}"> <span class="label label-primary">Edit</span></a></td>
 
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="delete_business" data-id="{{$n->id}}"> <span class="label label-danger" ">Delete</span></a></td>
                   	
@@ -260,12 +260,14 @@
                   <label for="exampleInputFile">Upload a Front Image*</label>
                   <input type="file" id="exampleInputFile" name="front_image" >
 
-                  <p class="help-block">Please upload image of dimension 1200*703</p>{{$errors->first('image')}}
+                  <p class="help-block">Please upload image of dimension 1200*703</p>{{$errors->first('image')}}<br>
+                  <img src="" id="Image1" width="300" height="200">
                 </div>
 
                  <div class="form-group">
                   <label for="exampleInputFile">Upload a Title Image*</label>
-                  <input type="file" id="exampleInputFile" name="title_image" >
+                  <input type="file" id="exampleInputFile" name="title_image" ><br>
+                  <img src="" id="Image2" width="300" height="200">
 
                   
                 </div>
@@ -274,7 +276,8 @@
                   <label for="exampleInputFile">Upload a Single Page Image</label>
                   <input id="exampleInputFile" type="file" name="single_image" >
 
-                  <p class="help-block">Please upload image of dimension 808*400</p>
+                  <p class="help-block">Please upload image of dimension 808*400</p><br>
+                  <img src="" id="Image3" width="300" height="200">
                 </div>
 
 

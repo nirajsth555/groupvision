@@ -32,7 +32,7 @@
                 </div>
                 <div class="right-part">
                   <div class="act-text">
-                    <img src="{{url($result->blog_image)}}" alt="Image" class="responsive-img">
+                    <img src="{{url($result->blog_single_image)}}" alt="Image" class="responsive-img">
                     <p><?php echo($result->blog_description); ?></p>
 
                   </div>

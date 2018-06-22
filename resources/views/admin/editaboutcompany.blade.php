@@ -63,7 +63,8 @@
                   
                   <input type="file" id="exampleInputFile" name="image">
 
-                  <p class="help-block">Please upload image of dimension 1800*572 </p>{{$errors->first('image')}}
+                  <p class="help-block">Please upload image of dimension 1800*572 </p><br>
+                  <img src="{{url($result->image)}}" width="500" height="300">{{$errors->first('image')}}
                 </div>
 
 

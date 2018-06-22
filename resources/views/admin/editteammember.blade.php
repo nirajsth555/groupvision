@@ -40,7 +40,8 @@
                   <label for="exampleInputFile">Image of Team Member*</label>
                   <input type="file" id="exampleInputFile" name="image">
 
-                  <p class="help-block">Example block-level help text here.</p>
+                  <p class="help-block">Example block-level help text here.</p><br>
+                  <img src="{{url($result->image)}}">
             </div>
 
             <div class="box box-info">

@@ -59,7 +59,7 @@
                     <td>{!! \Illuminate\Support\Str::words($n->business_perspective, 10,'....')  !!}</td> -->
                     <td><img src="{{url($n->event_image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editevent" data-id="{{$n->id}}" data-title="{{$n->event_title}}" data-description="{{$n->event_description}}" data-venue="{{$n->event_venue}}" data-address="{{$n->event_address}}" data-from="{{$n->event_date_from}}" data-to="{{$n->event_date_to}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editevent" data-id="{{$n->id}}" data-title="{{$n->event_title}}" data-description="{{$n->event_description}}" data-venue="{{$n->event_venue}}" data-address="{{$n->event_address}}" data-from="{{$n->event_date_from}}" data-to="{{$n->event_date_to}}" data-front="{{$n->event_image}}" data-single="{{$n->event_single_image}}"> <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deleteEvent" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -297,15 +297,17 @@
 
                  <div class="form-group">
                  <label for="exampleInputEmail1">Preview Image*</label>
-                 <input type="file" class="form-control"  name="event_image" required="" >
-                 Please upload image of dimension 230*270
+                 <input type="file" class="form-control"  name="event_image"  >
+                 Please upload image of dimension 230*270<br>
+                 <img src="" id="Image1" width="300" height="200">
                  
             </div>
 
             <div class="form-group">
                  <label for="exampleInputEmail1">Single Page Image*</label>
-                 <input type="file" class="form-control"  name="event_single_image" required="" >
-                 Please upload image of dimension 860*358
+                 <input type="file" class="form-control"  name="event_single_image" >
+                 Please upload image of dimension 860*358<br>
+                 <img src="" id="Image2" width="300" height="200">
                  
             </div>
 

@@ -48,7 +48,7 @@
                     <td>{!! \Illuminate\Support\Str::words($n->blog_description, 10,'....')  !!} </td>
                     
 
-                  	<td><a href="#" class="editblog" data-id="{{$n->id}}" data-title="{{$n->blog_title}}" data-description="{{$n->blog_description}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editblog" data-id="{{$n->id}}" data-title="{{$n->blog_title}}" data-description="{{$n->blog_description}}" data-thumbnail="{{$n->blog_image}}" data-full="{{$n->blog_single_image}}"> <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deleteBlog" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -165,15 +165,20 @@
                  
             </div>
             <div class="form-group">
+              
                  <label for="exampleInputEmail1">Thumbnail Image*</label>
                  <input type="file" class="form-control"  name="blog_image" >
-                 Please upload image of size 330*198
+                 Please upload image of size 330*198<br>
+                 <img src="" id="myImage" >
                  
             </div>
              <div class="form-group">
+              
+                 
                  <label for="exampleInputEmail1">Single Page Image*</label>
-                 <input type="file" class="form-control"  name="blog_single_image" >
-                 Please upload image of size 860*358
+                 <input type="file" class="form-control"  name="blog_single_image" > Please upload image of size 860*358<br>
+                 <img src="" id="Image" width="300" height="200">
+                
                  
             </div>
             <div class="box box-info">

@@ -52,7 +52,7 @@
                     
                     <td><img src="{{url($n->image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editwherewework" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->whatwedo_intro}}"> <span class="label label-primary">Edit</span></a></td>
+                  	<td><a href="#" class="editwherewework" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->whatwedo_intro}}" data-image="{{$n->image}}"> <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="alert('Are you sure you want to delete?')" class="deletewherewework" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
                 </tr>
@@ -216,7 +216,8 @@
                   <label for="exampleInputFile">Upload a Image*</label>
                   <input type="file" id="exampleInputFile" name="image" required="">
 
-                  <p class="help-block">Example block-level help text here.</p>{{$errors->first('image')}}
+                  <p class="help-block">Example block-level help text here.</p>{{$errors->first('image')}}<br>
+                  <img src="" id="Image1" width="300" height="200">
                 </div>
 
        
