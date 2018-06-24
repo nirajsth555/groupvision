@@ -736,25 +736,25 @@ $(".deleteWhatwedo").on('click',function(e){
 //end
 
 $('.editwhatwedo').on('click',function(){
-	
+	$('#editwhatwedo .btn-remove').click();
+	$('#editwhatwedo .addedImage').remove();
     $('#edit_id').val($(this).data('id'));
     $('#edit_title').val($(this).data('title'));
-    var edit_desc_array= $(this).data('img');
+    $('#mainimg').attr('src',$(this).data('mainimg'));
+
+    var point_img_array = $(this).data('pointimg');
 
     var point_desc_array = $(this).data('point');
+    debugger;
     //first ko pailai tei huncha tei bhaera 1st ko sidai haldeko
-    var edit_point = $('textarea[name="textarea[]"]').get();
-    edit_point.shift();
-    $(edit_point[0]).val(point_desc_array[0]);
-    //shift le 1st ko element remove gardincha
-    point_desc_array.shift();
-    point_desc_array.forEach(function(element,index){
-	    //debugger;
+    $('#editwhatwedo textarea[name="point[][textarea]"]').val(point_desc_array[0]);
+    $('#editwhatwedo input[name="point[][point_image]"]').parent().append($('<img>').attr('src',point_img_array[0]).css('width',200).addClass('addedImage'));
+    var count = point_desc_array.length;
+    for(i=1;i<count;i++){
     	$('#editwhatwedo .btn-add').click();
-    	$($('textarea[name="textarea[]"]').get().pop()).val(element);
-
-    });
-    
+    	$($('#editwhatwedo textarea[name="point[][textarea]"]').get().pop()).val(point_desc_array[i]);
+    	$($('#editwhatwedo input[name="point[][point_image]"]').get().pop()).parent().append($('<img>').attr('src',point_img_array[i]).css('width',200).addClass('addedImage'));
+    }
 
     
   

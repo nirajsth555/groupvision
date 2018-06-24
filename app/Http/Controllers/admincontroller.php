@@ -53,9 +53,6 @@ class admincontroller extends Controller
             'front_image'=>'dimensions:width=1200,height=703',
             'single_image'=>'dimensions:width=808,height=400'
             
-            
-            
-            
         ],['front_image.dimensions'=>'Please upload image of sixe 1200*703',
         'single_image.dimensions'=>'Please upload image of size 808*400',
         'required'=>'Please fill out all fields'
@@ -754,6 +751,7 @@ public function getEditwhatwedo($id){
 
 public function postEditwhatwedo($id,Request $request){
     $obj= whatwedotable::find($id);
+    
     $validation=Validator::make($request->all(),[
         'title'=>'required',
         //'image'=>'dimensions:width=808,height=400'
@@ -772,36 +770,56 @@ public function postEditwhatwedo($id,Request $request){
     
     $file=Input::file('image');
     if(!empty($file)){
-    $filename= md5(time()).".".$file->getClientOriginalName();
-    $location="public/businessimage/";
-    $file->move($location,$filename);
-    $image= $location.$filename;
-    $obj->image= $image;
+        $filename= md5(time()).".".$file->getClientOriginalName();
+        $location="public/businessimage/";
+        $file->move($location,$filename);
+        $image= $location.$filename;
+        $obj->image= $image;
     }
    
+    $existing_images = json_decode($obj->point_image);
+    $existing_textarea = json_decode($obj->point_description);
 
-    
-    $images=Input::file('point_image');
-    $image_arrays = [];
-    if(!empty($images)){
-    
-    foreach ($images as  $files) {
-        $filenames = md5(time()).".".$files->getClientOriginalName();
-        $locations = "public/businessimage/";
-        $files->move($locations,$filenames);
-        $images = $locations.$filenames;
-        $image_arrays[] = $images;
+    $points = Input::all('point')['point'];
+    $total = count($points);
+
+    for($i=0;$i<$total;$i++){
+        if (isset($points[$i]['point_image'])){
+            $file = $points[$i]['point_image'];
+            $filename= md5(time()).".".$file->getClientOriginalName();
+            $location="public/businessimage/";
+            $file->move($location,$filename);
+            $image = $location.$filename;
+            $existing_images[$i] = $image;
+        }
+
+        if (isset($points[$i]['textarea'])){
+            $existing_textarea[$i] = $points[$i]['textarea'];
+        }
     }
-    $obj->point_image = json_encode($image_arrays);
-}
+    $obj->point_image = json_encode(array_slice($existing_images,0,$total));
+    $obj->point_description = json_encode(array_slice($existing_textarea,0,$total));
 
 
-    $point_description=Input::get('textarea');
-    $point_descriptions= [];
-    foreach ($point_description as  $fileeeee) {
-        $point_descriptions[] = $fileeeee;
-    }
-    $obj->point_description = json_encode($point_descriptions);
+    // if(!empty($images)){
+    
+    //     foreach ($images as  $files) {
+    //         $filenames = md5(time()).".".$files->getClientOriginalName();
+    //         $locations = "public/businessimage/";
+    //         $files->move($locations,$filenames);
+    //         $images = $locations.$filenames;
+    //         $image_arrays[] = $images;
+    //     }
+    //     $obj->point_image = json_encode($image_arrays);
+    // }
+
+
+    // $point_description=Input::get('textarea');
+    // $point_descriptions= [];
+    // foreach ($point_description as  $fileeeee) {
+    //     $point_descriptions[] = $fileeeee;
+    // }
+    // $obj->point_description = json_encode($point_descriptions);
         
    
 

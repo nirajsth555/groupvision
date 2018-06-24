@@ -52,7 +52,7 @@
                     
                     <td><img src="{{url($n->image)}}" width="200px" height="200px"> </td>
 
-                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point='{{$n->point_description}}' data-img="{{$n->point_image}}" >
+                  	<td><a href="#" class="editwhatwedo" data-id="{{$n->id}}" data-title="{{$n->title}}" data-description="{{$n->introduction}}" data-point='{{$n->point_description}}' data-pointimg="{{$n->point_image}}" data-mainimg="{{url($n->image)}}" >
                      <span class="label label-primary">Edit</span></a></td>
                   	<td><a href="" onClick="Are u sure u want to delete?" class="deleteWhatwedo" data-id="{{$n->id}}"> <span class="label label-danger">Delete</span></a></td>
                   	
@@ -144,16 +144,16 @@
     <!--<div class="form-group">-->
         <div class="form-group">
                   <label for="exampleInputFile">Image of the point*</label>
-                  <input type="file" id="exampleInputFile" name="point_image[]"  >
+                  <input type="file" id="exampleInputFile" name="point[][point_image]"  >
 
                   <p class="help-block">Please upload image of dimension 232*265 </p>
 
-               
+                  
             </div>
 
             <div class="form-group">
                   <label>Textarea</label>
-                  <textarea class="form-control" placeholder="Enter ..." rows="3" name="textarea[]"></textarea>
+                  <textarea class="form-control" placeholder="Enter ..." rows="3" name="point[][textarea]"></textarea>
                 </div>
 
            
@@ -223,6 +223,7 @@
                   <input type="file" id="exampleInputFile" name="image" >
 
                   <p class="help-block">Please upload image of dimension 808*400</p>
+                  <img src="" id="mainimg" width="300" height="200">
                 </div>    
             <div class="box box-info">
             <div class="box-header">
@@ -253,19 +254,17 @@
             {{--@foreach($edit_point as $c) --}}
 
     <!--<div class="form-group">-->
-        <div class="form-group">
+            <div class="form-group">
                   <label for="exampleInputFile">Image of the point*</label>
                   <input type="file" id="exampleInputFile" name="point_image[]" id="edit_desc_array"  >
 
                   <p class="help-block">Please upload image of dimension 232*265 </p>
-
-               
             </div>
 
             <div class="form-group">
-                  <label>Textarea</label>
-                  <textarea class="form-control" placeholder="Enter ..." rows="3" name="textarea[]" id="edit_point"></textarea>
-                </div>
+              <label>Textarea</label>
+              <textarea class="form-control edit_point" placeholder="Enter ..." rows="3" name="textarea[]"></textarea>
+            </div>
 
            
     <!--</div>-->
