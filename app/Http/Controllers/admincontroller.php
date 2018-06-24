@@ -700,24 +700,43 @@ public function postAddwhatwedo(Request $request){
     $image= $location.$filename;
     $obj->image= $image;
      
-    $images=$request->file('point_image');
+
+    $points = $request->all('point')['point'];
+    $total = count($points);
+    
     $image_arrays = [];
-    foreach ($images as  $files) {
-        $filenames = md5(time()).".".$files->getClientOriginalName();
-        $locations = "public/businessimage/";
-        $files->move($locations,$filenames);
-        $images = $locations.$filenames;
-        $image_arrays[] = $images;
+    $point_descriptions= [];
+
+    for($i=0;$i<$total;$i++){
+            $file = $points[$i]['point_image'];
+            $filename= md5(time()).".".$file->getClientOriginalName();
+            $location="public/businessimage/";
+            $file->move($location,$filename);
+            $image = $location.$filename;
+            $image_arrays[$i] = $image;
+
+            $point_descriptions[$i] = $points[$i]['textarea'];
     }
     $obj->point_image = json_encode($image_arrays);
-
-    $point_description=$request->get('textarea');
-    $point_descriptions= [];
-    foreach ($point_description as  $fileeeee) {
-        
-        $point_descriptions[] = $fileeeee;
-    }
     $obj->point_description = json_encode($point_descriptions);
+
+
+    // $images=$request->file('point_image');
+    // foreach ($images as  $files) {
+    //     $filenames = md5(time()).".".$files->getClientOriginalName();
+    //     $locations = "public/businessimage/";
+    //     $files->move($locations,$filenames);
+    //     $images = $locations.$filenames;
+    //     $image_arrays[] = $images;
+    // }
+    // $obj->point_image = json_encode($image_arrays);
+
+    // $point_description=$request->get('textarea');
+    // foreach ($point_description as  $fileeeee) {
+        
+    //     $point_descriptions[] = $fileeeee;
+    // }
+    // $obj->point_description = json_encode($point_descriptions);
 
 
 
